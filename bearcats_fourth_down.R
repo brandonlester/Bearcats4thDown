@@ -168,7 +168,8 @@ decision_density <- function(x) {
     ggplot(aes(x=yards_to_goal, fill=!!as.name(x), alpha = fg)) + 
     #geom_density(alpha=0.2, position="identity") +
     geom_density(position="identity") +
-    scale_y_continuous(breaks = seq(0, 0.08, 0.02)) +
+    #scale_y_continuous(breaks = seq(0, 0.06, 0.02)) +
+    ylim(0,0.06) +
     scale_fill_manual(values = bearcats_colors) +
     scale_alpha_discrete(range = c(0.5, 1)) +
     theme_bw() +
@@ -176,15 +177,15 @@ decision_density <- function(x) {
       title = paste("Frequency of 4th Down", paste0(str_to_title(x),"s"), "by Yards to Endzone", legend_text),
       fill = x,
       x = "Yards to Endzone",
-      y = ""
+      y = "Density"
     ) +
     theme(
       plot.title = ggtext::element_markdown(size = 12),
       axis.text.x = element_text(size = 10),
       axis.title.x = element_text(size = 10),
-      legend.position = "none",
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank()
+      legend.position = "none"#,
+      # axis.text.y = element_blank(),
+      # axis.ticks.y = element_blank()
     )
 }
 
