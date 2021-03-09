@@ -180,7 +180,7 @@ decision_density <- function(x) {
       y = "Density"
     ) +
     theme(
-      plot.title = ggtext::element_markdown(size = 12),
+      plot.title = ggtext::element_markdown(size = 11),
       axis.text.x = element_text(size = 10),
       axis.title.x = element_text(size = 10),
       legend.position = "none"#,
